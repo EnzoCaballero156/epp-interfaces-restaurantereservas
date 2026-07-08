@@ -1,0 +1,93 @@
+:host {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  padding: 20px;
+}
+
+:host > div {
+  display: flex;
+  background-color: var(--color-black);
+  border-radius: var(--radius-card);
+  overflow: hidden;
+  max-width: 900px;
+  width: 100%;
+  box-shadow: 0 20px 40px rgba(0,0,0,0.35);
+}
+
+.Izquierda {
+  flex: 1;
+  padding: 60px 50px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.Izquierda h2 {
+  font-family: var(--font-heading);
+  color: var(--color-white);
+  font-size: 28px;
+  letter-spacing: 1px;
+  margin-bottom: 40px;
+  text-align: center;
+}
+
+.Izquierda form div {
+  margin-bottom: 18px;
+}
+
+.Izquierda input {
+  width: 100%;
+  padding: 14px 22px;
+  border-radius: var(--radius-pill);
+  border: 1.5px solid var(--color-white);
+  background: transparent;
+  color: var(--color-white);
+  font-family: var(--font-body);
+  font-size: 14px;
+}
+
+.Izquierda input::placeholder {
+  color: #bbb;
+}
+
+.Izquierda button[type="submit"] {
+  width: 100%;
+  padding: 14px;
+  border: none;
+  border-radius: var(--radius-pill);
+  background: linear-gradient(180deg, var(--color-btn-start), var(--color-btn-end));
+  color: var(--color-white);
+  font-weight: 700;
+  font-size: 15px;
+  margin-top: 10px;
+}
+
+.Izquierda p {
+  color: #ccc;
+  font-size: 13px;
+  margin-top: 20px;
+  text-align: center;
+}
+
+.Izquierda p a {
+  color: var(--color-white);
+  font-weight: 700;
+}
+
+.Derecha {
+  flex: 1;
+}
+
+.Derecha img {
+  width: 100%;
+  height: 100%;
+  border-radius: 30px;
+  object-fit: cover;
+  display: block;
+}
+
+.container {
+  display: flex
+}

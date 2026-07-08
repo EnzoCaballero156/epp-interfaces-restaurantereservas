@@ -1,0 +1,14 @@
+<app-navbar titulo="Reservas" ruta="/reservas"></app-navbar>
+<div class="container">
+    <div>
+        <h2>Añadir Mesa</h2>
+        <form [formGroup]="mesaForm" (ngSubmit)="agregarMesa()">
+            <input type="text" placeholder="Nombre" formControlName="nombre" required>
+            <input type="number" placeholder="Capacidad" formControlName="capacidad" min="1" required>
+            <button type="submit">Añadir</button>
+        </form>
+    </div>
+</div>
+<div>
+    <app-disponibilidad-mesas [mesas]="mesas"></app-disponibilidad-mesas>
+</div>

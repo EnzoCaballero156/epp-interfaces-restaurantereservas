@@ -1,0 +1,43 @@
+<app-navbar titulo="Menú" ruta="/menu"></app-navbar>
+<div class="reservar-container">
+    <div class="arriba">
+        <div class="Izquierda">
+            <div>
+                <div>
+                    <p>Zona de Terraza</p>
+                    <p>Lima</p>
+                </div>
+                <div>
+                    <h2>Los mejores platos, los encuentras aquí</h2>
+                </div>
+            </div>
+        </div>
+        <div class="Derecha">
+            <div>
+                <h2>REALIZA TU RESERVA</h2>
+                <form [formGroup]="reservaForm" (ngSubmit)="reservar()">
+                    <div>
+                        <label>Fecha</label>
+                        <input type="date" formControlName="fecha" required>
+                    </div>
+                    <div>
+                        <label>Hora</label>
+                        <input type="time" formControlName="hora" required>
+                    </div>
+                    <div>
+                        <label>Mesa</label>
+                        <select name="mesas" id="mesas" formControlName="mesa">
+                            @for (mesa of mesasDisponibles; track mesa) {
+                                <option [value]="mesa.nombre">{{ mesa.nombre }}</option>
+                            }
+                        </select>
+                    </div>
+                    <button type="submit" [disabled]="mesasDisponibles.length === 0">Reservar</button>
+                </form>
+            </div>
+        </div>
+    </div>
+    <div class="Abajo">
+        <app-disponibilidad-mesas [mesas]="mesas"></app-disponibilidad-mesas>
+    </div>
+</div>

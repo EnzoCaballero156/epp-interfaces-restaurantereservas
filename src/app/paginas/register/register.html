@@ -1,0 +1,25 @@
+<div>
+    <div class="container">
+        <div class="Izquierda">
+            <h2>REGISTRO</h2>
+            <form [formGroup]="registerForm" (ngSubmit)="autenticar()">
+                <div>
+                    <input type="text" placeholder="Nombre" formControlName="username" required>
+                </div>
+                <div>
+                    <input type="email" placeholder="Email" formControlName="email" required>
+                </div>
+                <div>
+                    <input type="password" placeholder="Contraseña" formControlName="password" required>
+                </div>
+                <button type="submit">Ingresar</button>
+            </form>
+            <p>
+                ¿Ya tienes cuenta? <a routerLink="/">Inicia sesión</a>
+            </p>
+        </div>
+        <div class="Derecha">
+            <img src="Imagenes/Imagen-login.jpg" alt="Restaurante">
+        </div>
+    </div>
+</div>

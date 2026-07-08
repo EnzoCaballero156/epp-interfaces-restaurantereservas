@@ -1,0 +1,69 @@
+.Login-container {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px;
+  padding: 40px;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.Login-card {
+  border-radius: 20px;
+  overflow: hidden;
+  background-color: var(--color-black);
+}
+
+.Login-card > div {
+  display: flex;
+  height: 100%;
+}
+
+.Login-card > div > div:first-child {
+  flex: 1;
+  padding: 24px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.Login-card h4 {
+  font-family: var(--font-heading);
+  color: var(--color-white);
+  font-size: 20px;
+  margin: 0 0 8px;
+}
+
+.Login-card p {
+  color: var(--color-white);
+  font-size: 15px;
+  margin: 0;
+}
+
+.Login-card > div > div:last-child {
+  flex: 0 0 40%;
+}
+
+.Login-card img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.Login-card:nth-child(odd) {
+  background-color: var(--color-white);
+}
+
+.Login-card:nth-child(odd) h4,
+.Login-card:nth-child(odd) p {
+  color: var(--color-black);
+}
+
+.Login-card:first-child {
+  background-color: var(--color-black);
+}
+
+.Login-card:first-child h4,
+.Login-card:first-child p {
+  color: var(--color-white);
+}

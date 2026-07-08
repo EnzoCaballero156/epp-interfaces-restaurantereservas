@@ -1,0 +1,20 @@
+<div class="tabla-mesas">
+    <table>
+        <thead>
+            <tr>
+                <th>Mesa</th>
+                <th>Capacidad</th>
+                <th>Disponibilidad</th>
+            </tr>
+        </thead>
+        <tbody>
+            @for (mesa of mesas; track mesa) {
+                <tr>
+                    <td>{{ mesa.nombre }}</td>
+                    <td>{{ mesa.capacidad }}</td>
+                    <td>{{ mesa.disponible ? 'Disponible' : 'Ocupada' }}</td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>

@@ -1,0 +1,30 @@
+<app-navbar titulo="Mesas" ruta="/mesas"></app-navbar>
+<div class="container">
+    <div>
+        <h2>Registro de reservas</h2>
+    </div>
+    <div class="tabla-reservas">
+        <table>
+            <thead>
+                <tr>
+                    <th>Cliente</th>
+                    <th>Correo</th>
+                    <th>Mesa</th>
+                    <th>Fecha</th>
+                    <th>Hora</th>
+                </tr>
+            </thead>
+            <tbody>
+                @for (reserva of reservas; track reserva.cliente) {
+                    <tr>
+                        <td>{{ reserva.cliente }}</td>
+                        <td>{{ reserva.correo }}</td>
+                        <td>{{ reserva.mesa }}</td>
+                        <td>{{ reserva.fecha }}</td>
+                        <td>{{ reserva.hora }}</td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+</div>
