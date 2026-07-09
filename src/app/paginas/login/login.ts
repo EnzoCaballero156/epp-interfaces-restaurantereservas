@@ -19,12 +19,16 @@ export class Login {
     password: ['', [Validators.required]]
   })
 
+  private verificarAdmin(email: string, password: string): void {
+    if (email === 'admin@admin.xyz' && password === 'admin') { this.router.navigate(['/mesas']); return }
+    this.router.navigate(['/menu'])
+  } 
+
   public autenticar(): void {
     if (this.loginForm.invalid) return
     let { email, password } = this.loginForm.getRawValue()
     this.authService.login(email, password)
     if (!this.authService.isLoggedIn()) return
-    if (email === 'admin@admin.xyz' && password === 'admin') { this.router.navigate(['/mesas']); return }
-    this.router.navigate(['/menu'])
+    this.verificarAdmin(email, password)
   }
 }

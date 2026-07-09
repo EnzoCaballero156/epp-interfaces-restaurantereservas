@@ -32,8 +32,8 @@ export class AuthService {
   }
 
   public register(username: string, email: string, password: string): void {
-    let newUser: User = this.userService.crearUser(username, email, password)
     if (this.userService.existsByEmail(email)) return
+    let newUser: User = this.userService.crearUser(username, email, password)
     this.userService.addUser(newUser)
     this.crearSesion(newUser)
   }

@@ -8,5 +8,5 @@ import { Mesa, MesaService } from '../../servicios/mesa-service';
   styleUrl: './disponibilidad-mesas.css',
 })
 export class DisponibilidadMesas {
-  @Input() mesas!: Mesa[]
+  @Input() mesas: Mesa[] = []
 }
