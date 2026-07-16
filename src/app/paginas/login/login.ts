@@ -21,14 +21,14 @@ export class Login {
 
   private verificarAdmin(email: string, password: string): void {
     if (email === 'admin@admin.xyz' && password === 'admin') { this.router.navigate(['/mesas']); return }
-    this.router.navigate(['/menu'])
-  } 
+      this.router.navigate(['/menu'])
+    } 
 
   public autenticar(): void {
     if (this.loginForm.invalid) return
     let { email, password } = this.loginForm.getRawValue()
     this.authService.login(email, password)
-    if (!this.authService.isLoggedIn()) return
     this.verificarAdmin(email, password)
+    if (!this.authService.isLoggedIn()) return
   }
 }

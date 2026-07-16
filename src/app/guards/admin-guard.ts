@@ -11,8 +11,7 @@ export const adminGuard: CanActivateFn = () => {
   let sesion = authService.cargarSesion()
   if (!sesion) return false
 
-  let usuarioData = userService.getByEmail(sesion.email)!
-  if (usuarioData.email !== 'admin@admin.xyz' && usuarioData.password !== 'admin') {
+  if (sesion.email !== 'admin@admin.xyz') {
     router.navigate(['/menu'])
     return false
   }
